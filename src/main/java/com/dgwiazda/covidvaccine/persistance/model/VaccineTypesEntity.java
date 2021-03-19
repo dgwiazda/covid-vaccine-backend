@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "T_VACCINE_TYPES")
-public class VaccineTypeEntity {
+public class VaccineTypesEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vaccineTypesIdGenSeq")
@@ -24,7 +24,7 @@ public class VaccineTypeEntity {
     @Column(name = "description")
     private String description;
 
-    public VaccineTypeEntity(Long id, String name, String description) {
+    public VaccineTypesEntity(Long id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
