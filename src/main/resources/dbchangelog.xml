@@ -4,28 +4,27 @@
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-<!--    <changeSet  id="1614601570_create_table_fraction"  author="dgwiazda">-->
-<!--        <sql>-->
-<!--            create table t_fraction-->
-<!--            (-->
-<!--            id bigint not null,-->
-<!--            fraction varchar(150) not null,-->
-<!--            destruction int not null-->
-<!--            );-->
+    <changeSet  id="1616192642_create_table_vaccine_types"  author="dgwiazda">
+        <sql>
+            create table T_VACCINE_TYPES
+            (
+                id int not null,
+                name varchar(33) not null,
+                description text
+            );
 
-<!--            create unique index fraction_destruction_uindex-->
-<!--            on t_fraction (destruction);-->
+            create unique index t_vaccine_types_id_uindex
+            on T_VACCINE_TYPES (id);
 
-<!--            create unique index fraction_fraction_uindex-->
-<!--            on t_fraction (fraction);-->
+            create unique index t_vaccine_types_name_uindex
+            on T_VACCINE_TYPES (name);
 
-<!--            create unique index fraction_id_uindex-->
-<!--            on t_fraction (id);-->
+            alter table T_VACCINE_TYPES
+            add constraint t_vaccine_types_pk
+            primary key (id);
 
-<!--            alter table t_fraction-->
-<!--            add constraint fraction_pk-->
-<!--            primary key (id);-->
-<!--        </sql>-->
-<!--    </changeSet>-->
+
+        </sql>
+    </changeSet>
 
 </databaseChangeLog>
