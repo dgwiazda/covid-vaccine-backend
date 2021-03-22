@@ -15,7 +15,7 @@ public class VaccineTypeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vaccineTypeIdGenSeq")
-    @SequenceGenerator(name = "vaccineTypeIdGenSeq", sequenceName = "VACCINE_TYPE_ID_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "vaccineTypeIdGenSeq", sequenceName = "vaccineTypeIdGenSeq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
