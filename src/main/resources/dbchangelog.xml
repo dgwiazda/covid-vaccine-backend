@@ -4,27 +4,40 @@
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet  id="1616192642_create_table_vaccine_types"  author="dgwiazda">
+    <changeSet  id="1616192642_create_table_vaccine_type"  author="dgwiazda">
         <sql>
-            create table T_VACCINE_TYPES
+            create table t_vaccine_type
             (
-                id int not null,
+                id bigint not null,
                 name varchar(33) not null,
-                description text
+                information_before_take text not null,
+                way_of_giving text not null,
+                NOP_information text not null
             );
 
-            create unique index t_vaccine_types_id_uindex
-            on T_VACCINE_TYPES (id);
+            create unique index t_vaccine_type_id_uindex
+            on t_vaccine_type (id);
 
-            create unique index t_vaccine_types_name_uindex
-            on T_VACCINE_TYPES (name);
+            create unique index t_vaccine_type_name_uindex
+            on t_vaccine_type (name);
 
-            alter table T_VACCINE_TYPES
-            add constraint t_vaccine_types_pk
+            alter table t_vaccine_type
+            add constraint t_vaccine_type_pk
             primary key (id);
-
-
         </sql>
     </changeSet>
+
+<!--    <changeSet  id="1616438068_alter_insert_table_vaccine_types"  author="dgwiazda">-->
+<!--        <sql>-->
+<!--            INSERT INTO-->
+<!--            t_vaccine_types (name, description)-->
+<!--            VALUES-->
+<!--            ('Moderna','Google'),-->
+<!--            ('Comirnaty','Yahoo'),-->
+<!--            ('AstraZEneca','Bing');-->
+
+
+<!--        </sql>-->
+<!--    </changeSet>-->
 
 </databaseChangeLog>
