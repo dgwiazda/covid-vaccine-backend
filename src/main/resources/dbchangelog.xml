@@ -41,300 +41,234 @@
             t_vaccine_type (name, information_before_take, way_of_giving, NOP_information)
             VALUES
             ('Moderna',
-            'Kiedy nie przyjmować szczepionki
-            jeśli pacjent ma uczulenie na substancję czynną lub
-            którykolwiek z pozostałych składników tej szczepionki.
-            Ostrzeżenia i środki ostrożności
-            Przed przyjęciem COVID-19 Vaccine Moderna należy
-            omówić to z lekarzem lub pielęgniarką, jeżeli:
-            u pacjenta kiedykolwiek wystąpiła ciężka, zagrażająca życiu reakcja alergiczna po wstrzyknięciu
-            jakiejkolwiek innej szczepionki lub po podaniu COVID-19
-            Vaccine Moderna w przeszłości;
-            u pacjenta występuje osłabienie lub upośledzenie
-            układu immunologicznego
-            u pacjenta kiedykolwiek doszło do omdlenia po
-            wkłuciu jakiejkolwiek igły;
-            u pacjenta występują zaburzenia krzepliwości;
-            u pacjenta występuje wysoka gorączka albo ciężkie
-            zakażenie; pacjent może jednak otrzymać szczepionkę, jeśli występuje u niego łagodna gorączka lub
-            infekcja górnych dróg oddechowych, taka jak przeziębienie;
-            u pacjenta występuje jakakolwiek poważna choroba;
-            u pacjenta występuje lęk związany ze wstrzyknięciami.
-            W przypadku zaistnienia którejkolwiek z powyższych
-            sytuacji (albo gdy nie ma pewności), przed przyjęciem
-            COVID-19 Vaccine Moderna należy omówić to z lekarzem lub pielęgniarką.
-            Tak jak w przypadku każdej innej szczepionki, cykl
-            2 dawek COVID-19 Vaccine Moderna może nie zapewniać pełnej ochrony wszystkim osobom, które go
-            otrzymały oraz nie wiadomo jak długo ochrona ta będzie się utrzymywać.
-            Dzieci i młodzież
-            COVID-19 Vaccine Moderna nie jest zalecana u dzieci
-            i młodzieży w wieku poniżej 18 lat.
-            COVID-19 Vaccine Moderna a inne leki
-            Należy powiedzieć lekarzowi o wszystkich lekach
-            przyjmowanych przez pacjenta obecnie lub ostatnio,
-            a także o lekach, które pacjent planuje przyjmować.
-            COVID-19 Vaccine Moderna może wpływać na działanie innych leków, a inne leki mogą wpływać na działanie
-            COVID-19 Vaccine Moderna.
-            Ciąża i karmienie piersią
-            Jeśli pacjentka jest w ciąży lub karmi piersią, przypuszcza że może być w ciąży lub gdy planuje mieć
-            dziecko,
-            powinna poradzić się lekarza lub pielęgniarki przed
-            szczepieniem.
-            Prowadzenie pojazdów i obsługiwanie maszyn
-            Nie należy prowadzić pojazdów ani obsługiwać maszyn
-            w przypadku złego samopoczucia po szczepieniu. Należy zaczekać, dopóki wpływ szczepionki nie ustąpi
-            przed prowadzeniem pojazdów lub obsługiwaniem
-            maszyn.COVID-19 Vaccine Moderna zawiera sód
-            COVID-19 Vaccine Moderna zawiera mniej niż
-            23 mmol sodu na dawkę, to znaczy szczepionkę uznaje
-            się za „wolną od sodu”',
-            'COVID-19 Vaccine Moderna zostanie podana w postaci dwóch wstrzyknięć po 0,5 ml. Zaleca się, aby
-            drugą dawkę tej samej szczepionki podawać 28 dni po
-            przyjęciu pierwszej dawki, aby ukończyć cykl szczepienia.
-            Uprawniona osoba wykonująca zawód medyczny wstrzyknie pacjentowi szczepionkę w mięsień
-            (wstrzyknięcie domięśniowe) ramienia.
-            Podczas podawania każdego wstrzyknięcia szczepionki
-            i przez około 15 minut po jego podaniu lekarz lub pielęgniarka będzie obserwować pacjenta czy nie występują u niego objawy reakcji alergicznej.
-            Niestawienie się na wizytę w celu przyjęcia drugiej
-            dawki COVID-19 Vaccine Moderna
-            W przypadku niestawienia się na wizytę należy jak
-            najprędzej ustalić inny termin wizyty.
-            W przypadku pominięcia planowego wstrzyknięcia
-            pacjent może nie być w pełni chroniony przed wirusem wywołującym COVID-19.
-            W razie jakichkolwiek dalszych wątpliwości związanych ze stosowaniem tej szczepionki, należy zwrócić
-            się do lekarza lub pielęgniarki.',
-            'Jak każdy lek, szczepionka ta może powodować działania niepożądane, chociaż nie u każdego one wystąpią.
-            Należy uzyskać pilną pomoc medyczną w przypadku
-            wystąpienia któregokolwiek z poniższych objawów
-            przedmiotowych i podmiotowych reakcji alergicznej:
-            uczucie osłabienia lub zawroty głowy;
-            zmiany rytmu serca;
-            duszność;
-            świszczący oddech;
-            obrzęk ust, twarzy albo gardła;
-            pokrzywka albo wysypka;
-            nudności albo wymioty;
-            ból brzucha.
-            Zgłaszanie działań niepożądanych
-            Jeśli wystąpią jakiekolwiek objawy niepożądane,
-            w tym wszelkie objawy niepożądane niewymienione
-            w tej ulotce, należy powiedzieć o tym lekarzowi, farmaceucie lub pielęgniarce.
-            Działania niepożądane można zgłaszać bezpośrednio
-            do Departamentu Monitorowania Niepożądanych
-            Działań Produktów Leczniczych Urzędu Rejestracji
-            Produktów Leczniczych, Wyrobów Medycznych i Produktów Biobójczych:
+            '
+            KIEDY NIE PRZYJMOWAĆ SZCZEPIONKI
+            • jeśli pacjent ma uczulenie na substancję czynną lub którykolwiek z pozostałych składników tej szczepionki.
+
+            OSTRZEŻENIA I ŚRODKI OSTROŻNOŚCI
+            Przed przyjęciem COVID-19 Vaccine Moderna należy omówić to z lekarzem lub pielęgniarką, jeżeli:
+            • u pacjenta kiedykolwiek wystąpiła ciężka, zagrażająca życiu reakcja alergiczna po wstrzyknięciu jakiejkolwiek innej szczepionki lub po podaniu COVID-19 Vaccine Moderna w przeszłości
+            • u pacjenta występuje osłabienie lub upośledzenie układu immunologicznego
+            • u pacjenta kiedykolwiek doszło do omdlenia po wkłuciu jakiejkolwiek igły
+            • u pacjenta występują zaburzenia krzepliwości
+            • u pacjenta występuje wysoka gorączka albo ciężkie zakażenie; pacjent może jednak otrzymać szczepionkę, jeśli występuje u niego łagodna gorączka lub infekcja górnych dróg oddechowych, taka jak przeziębienie;
+            • u pacjenta występuje jakakolwiek poważna choroba
+            • u pacjenta występuje lęk związany ze wstrzyknięciami.
+
+            W przypadku zaistnienia którejkolwiek z powyższych sytuacji (albo gdy nie ma pewności), przed przyjęciem COVID-19 Vaccine Moderna należy omówić to z lekarzem lub pielęgniarką.
+
+            Tak jak w przypadku każdej innej szczepionki, cykl 2 dawek COVID-19 Vaccine Moderna może nie zapewniać pełnej ochrony wszystkim osobom, które go otrzymały oraz nie wiadomo jak długo ochrona ta będzie się utrzymywać.
+
+            DZIECI I MŁODZIEŻ
+            COVID-19 Vaccine Moderna nie jest zalecana u dzieci i młodzieży w wieku poniżej 18 lat.
+
+            COVID-19 VACCINE MODERNA A INNE LEKI
+            Należy powiedzieć lekarzowi o wszystkich lekach przyjmowanych przez pacjenta obecnie lub ostatnio, a także o lekach, które pacjent planuje przyjmować. COVID-19 Vaccine Moderna może wpływać na działanie innych leków, a inne leki mogą wpływać na działanie COVID-19 Vaccine Moderna.
+
+            CIĄŻA I KARMIENIE PIERSIĄ
+            Jeśli pacjentka jest w ciąży lub karmi piersią, przypuszcza że może być w ciąży lub gdy planuje mieć dziecko, powinna poradzić się lekarza lub pielęgniarki przed szczepieniem.
+
+            PROWADZENIE POJAZDÓW I OBSŁUGIWANIE MASZYN
+            Nie należy prowadzić pojazdów ani obsługiwać maszyn w przypadku złego samopoczucia po szczepieniu. Należy zaczekać, dopóki wpływ szczepionki nie ustąpi przed prowadzeniem pojazdów lub obsługiwaniem maszyn.
+
+            COVID-19 VACCINE MODERNA ZAWIERA SÓD
+            COVID-19 Vaccine Moderna zawiera mniej niż 23 mmol sodu na dawkę, to znaczy szczepionkę uznaje się za „wolną od sodu”.',
+
+            '
+            COVID-19 Vaccine Moderna zostanie podana w postaci dwóch wstrzyknięć po 0,5 ml. Zaleca się, aby drugą dawkę tej samej szczepionki podawać 28 dni po przyjęciu pierwszej dawki, aby ukończyć cykl szczepienia.
+
+            Uprawniona osoba wykonująca zawód medyczny wstrzyknie pacjentowi szczepionkę w mięsień (wstrzyknięcie domięśniowe) ramienia.
+
+            Podczas podawania każdego wstrzyknięcia szczepionki i przez około 15 minut po jego podaniu lekarz lub pielęgniarka będzie obserwować pacjenta czy nie występują u niego objawy reakcji alergicznej.
+
+            Niestawienie się na wizytę w celu przyjęcia drugiej dawki COVID-19 Vaccine Moderna
+            • W przypadku niestawienia się na wizytę należy jak najprędzej ustalić inny termin wizyty.
+            • W przypadku pominięcia planowego wstrzyknięcia pacjent może nie być w pełni chroniony przed wirusem wywołującym COVID-19.
+
+            W razie jakichkolwiek dalszych wątpliwości związanych ze stosowaniem tej szczepionki, należy zwrócić się do lekarza lub pielęgniarki.',
+
+            '
+            Jak każdy lek, szczepionka ta może powodować działania niepożądane, chociaż nie u każdego one wystąpią.
+
+            Należy uzyskać pilną pomoc medyczną w przypadku wystąpienia któregokolwiek z poniższych objawów przedmiotowych i podmiotowych reakcji alergicznej:
+            • uczucie osłabienia lub zawroty głowy
+            • zmiany rytmu serca
+            • duszność
+            • świszczący oddech
+            • obrzęk ust, twarzy albo gardła
+            • pokrzywka albo wysypka
+            • nudności albo wymioty
+            • ból brzucha.
+
+            ZGŁASZANIE DZIAŁAŃ NIEPOŻĄDANYCH
+            Jeśli wystąpią jakiekolwiek objawy niepożądane, w tym wszelkie objawy niepożądane niewymienione w tej ulotce, należy powiedzieć o tym lekarzowi, farmaceucie lub pielęgniarce.
+
+            Działania niepożądane można zgłaszać bezpośrednio do Departamentu Monitorowania Niepożądanych Działań Produktów Leczniczych Urzędu Rejestracji Produktów Leczniczych, Wyrobów Medycznych i Produktów Biobójczych:
+
             Al. Jerozolimskie 181C, 02-222 Warszawa,
             tel.: + 48 22 49 21 301, faks: + 48 22 49 21 309.
+
             Strona internetowa: https://smz.ezdrowie.gov.pl.
+
             Dzięki zgłaszaniu działań niepożądanych można będzie zgromadzić więcej informacji na temat bezpieczeństwa stosowania szczepionki.'),
 
             ('Comirnaty',
-            'Kiedy nie podawać szczepionki Comirnaty
-            • jeśli pacjent ma uczulenie na substancję czynną lub którykolwiek
-            z pozostałych składników tego leku.
-            Ostrzeżenia i środki ostrożności
-            Przed otrzymaniem szczepionki należy omówić to z lekarzem,
-            farmaceutą lub pielęgniarką, jeśli:
-            • u pacjenta kiedykolwiek wystąpiła ciężka reakcja alergiczna lub
-            problemy z oddychaniem po wstrzyknięciu jakiejkolwiek innej
-            szczepionki lub po podaniu szczepionki Comirnaty w przeszłości.
-            • pacjent kiedykolwiek zemdlał po podaniu wstrzyknięcia z użyciem
-            igły.
-            • u pacjenta występuje ciężka choroba lub infekcja przebiegająca
-            z wysoką gorączką. Pacjent może jednak otrzymać szczepionkę,
-            jeśli występuje u niego nieznaczna gorączka lub infekcja górnych
-            dróg oddechowych, taka jak przeziębienie.
-            • pacjent ma problemy z krzepnięciem krwi, łatwo powstają u niego
-            siniaki lub stosuje lek przeciwzakrzepowy.
-            • pacjent ma osłabiony układ immunologiczny w wyniku choroby,
-            takiej jak zakażenie wirusem HIV lub przyjmuje leki, takie jak
-            kortykosteroidy, wpływające na układ immunologiczny.
-            Tak jak w przypadku każdej innej szczepionki, cykl 2 dawek
-            szczepionki Comirnaty może nie zapewniać pełnej ochrony
-            wszystkim osobom, które go otrzymały oraz nie wiadomo jak długo
-            ochrona ta będzie się utrzymywać.
-            Dzieci i młodzież
-            Szczepionka Comirnaty nie jest zalecana do stosowania u dzieci
-            w wieku poniżej 16 lat.
-            Szczepionka Comirnaty a inne leki
-            Należy powiedzieć lekarzowi lub farmaceucie o wszystkich lekach
-            stosowanych przez pacjenta obecnie lub ostatnio, a także o lekach,
-            które pacjent planuje stosować oraz o jakichkolwiek niedawno
-            otrzymanych szczepionkach.
-            Ciąża i karmienie piersią
-            Jeśli pacjentka jest w ciąży lub karmi piersią, przypuszcza że może
-            być w ciąży lub gdy planuje mieć dziecko, powinna poradzić się
-            lekarza lub farmaceuty przed otrzymaniem tej szczepionki.
-            Prowadzenie pojazdów i obsługiwanie maszyn
-            Niektóre z działań szczepionki wymienione w punkcie 4 (Możliwe
-            działania niepożądane) mogą tymczasowo wpływać na zdolność
-            prowadzenia pojazdów lub obsługiwania maszyn. Należy poczekać
-            aż działania te ustąpią przed przystąpieniem do prowadzenia
-            pojazdów lub obsługiwania maszyn.
-            Szczepionka Comirnaty zawiera potas i sód
-            Szczepionka zawiera mniej niż 1 mmol (39 mg) potasu na dawkę, to
-            znaczy szczepionkę uznaje się za „wolną od potasu”.
-            Szczepionka zawiera mniej niż 1 mmol (23 mg) sodu na dawkę, to
-            znaczy szczepionkę uznaje się za „wolną od sodu”.',
-            'Szczepionkę Comirnaty podaje się po rozcieńczeniu jako
-            wstrzyknięcie 0,3 ml do mięśnia górnej części ramienia.
+            '
+            KIEDY NIE PODAWAĆ SZCZEPIONKI COMIRNATY
+            • jeśli pacjent ma uczulenie na substancję czynną lub którykolwiek z pozostałych składników tego leku.
+
+            OSTRZEŻENIA I ŚRODKI OSTROŻNOŚCI
+
+            Przed otrzymaniem szczepionki należy omówić to z lekarzem, farmaceutą lub pielęgniarką, jeśli:
+
+            • u pacjenta kiedykolwiek wystąpiła ciężka reakcja alergiczna lub problemy z oddychaniem po wstrzyknięciu jakiejkolwiek innej szczepionki lub po podaniu szczepionki Comirnaty w przeszłości.
+            • pacjent kiedykolwiek zemdlał po podaniu wstrzyknięcia z użyciem igły.
+            • u pacjenta występuje ciężka choroba lub infekcja przebiegająca z wysoką gorączką. Pacjent może jednak otrzymać szczepionkę, jeśli występuje u niego nieznaczna gorączka lub infekcja górnych dróg oddechowych, taka jak przeziębienie.
+            • pacjent ma problemy z krzepnięciem krwi, łatwo powstają u niego siniaki lub stosuje lek przeciwzakrzepowy.
+            • pacjent ma osłabiony układ immunologiczny w wyniku choroby, takiej jak zakażenie wirusem HIV lub przyjmuje leki, takie jak kortykosteroidy, wpływające na układ immunologiczny.
+
+            Tak jak w przypadku każdej innej szczepionki, cykl 2 dawek szczepionki Comirnaty może nie zapewniać pełnej ochrony wszystkim osobom, które go otrzymały oraz nie wiadomo jak długo ochrona ta będzie się utrzymywać.
+
+            DZIECI I MŁODZIEŻ
+            Szczepionka Comirnaty nie jest zalecana do stosowania u dzieci w wieku poniżej 16 lat.
+
+            SZCZEPIONKA COMIRNATY A INNE LEKI
+            Należy powiedzieć lekarzowi lub farmaceucie o wszystkich lekach stosowanych przez pacjenta obecnie lub ostatnio, a także o lekach, które pacjent planuje stosować oraz o jakichkolwiek niedawno otrzymanych szczepionkach.
+
+            CIĄŻA I KARMIENIE PIERSIĄ
+            Jeśli pacjentka jest w ciąży lub karmi piersią, przypuszcza że może być w ciąży lub gdy planuje mieć dziecko, powinna poradzić się lekarza lub farmaceuty przed otrzymaniem tej szczepionki.
+
+            PROWADZENIE POJAZDÓW I OBSŁUGIWANIE MASZYN
+            Niektóre z działań szczepionki wymienione w punkcie 4 (Możliwe działania niepożądane) mogą tymczasowo wpływać na zdolność prowadzenia pojazdów lub obsługiwania maszyn. Należy poczekać aż działania te ustąpią przed przystąpieniem do prowadzenia pojazdów lub obsługiwania maszyn.
+
+            SZCZEPIONKA COMIRNATY ZAWIERA POTAS I SÓD
+            Szczepionka zawiera mniej niż 1 mmol (39 mg) potasu na dawkę, to znaczy szczepionkę uznaje się za „wolną od potasu”.
+            Szczepionka zawiera mniej niż 1 mmol (23 mg) sodu na dawkę, to znaczy szczepionkę uznaje się za „wolną od sodu”.',
+            '
+            Szczepionkę Comirnaty podaje się po rozcieńczeniu jako wstrzyknięcie 0,3 ml do mięśnia górnej części ramienia.
             Pacjent otrzyma 2 wstrzyknięcia.
-            Zaleca się podanie drugiej dawki tej samej szczepionki po upływie
-            3 tygodni od podania pierwszej dawki, aby ukończyć cykl
-            szczepienia.
-            W razie jakichkolwiek dalszych wątpliwości związanych ze
-            stosowaniem szczepionki Comirnaty, należy zwrócić się do lekarza,
-            farmaceuty lub pielęgniarki.',
-            'Jak każda szczepionka, szczepionka Comirnaty może powodować
-            działania niepożądane, chociaż nie u każdego one wystąpią.
-            Co to jest szczepionka Comirnaty
-            i w jakim celu się ją stosuje
-            2 Informacje ważne przed otrzymaniem
-            szczepionki Comirnaty
-            Jak podaje się szczepionkę Comirnaty
-            4 Możliwe działania niepożądaneVersion: 23.02.2021
-            5
-            Bardzo częste działania niepożądane: mogą wystąpić u więcej niż
-            1 na 10 osób
+            Zaleca się podanie drugiej dawki tej samej szczepionki po upływie 3 tygodni od podania pierwszej dawki, aby ukończyć cykl szczepienia.
+            W razie jakichkolwiek dalszych wątpliwości związanych ze stosowaniem szczepionki Comirnaty, należy zwrócić się do lekarza, farmaceuty lub pielęgniarki.',
+            '
+            Jak każda szczepionka, szczepionka Comirnaty może powodować działania niepożądane, chociaż nie u każdego one wystąpią.
+
+            BARDZO CZĘSTE DZIAŁANIA NIEPOŻĄDANE: mogą wystąpić u więcej niż 1 na 10 osób
             • w miejscu wstrzyknięcia: ból, obrzęk,
             • zmęczenie,
             • ból głowy,
             • ból mięśni,
             • ból stawów,
             • dreszcze, gorączka.
-            Częste działania niepożądane: mogą wystąpić u maksymalnie 1 na
-            10 osób
+
+            CZĘSTE DZIAŁANIA NIEPOŻĄDANE: mogą wystąpić u maksymalnie 1 na 10 osób
             • zaczerwienienie w miejscu wstrzyknięcia,
             • nudności.
-            Niezbyt częste działania niepożądane: mogą wystąpić
-            u maksymalnie 1 na 100 osób
+
+            NIEZBYT CZĘSTE DZIAŁANIA NIEPOŻĄDANE: mogą wystąpić u maksymalnie 1 na 100 osób
             • powiększone węzły chłonne,
             • złe samopoczucie,
             • ból kończyny,
             • bezsenność,
             • swędzenie w miejscu wstrzyknięcia.
-            Rzadkie działania niepożądane: mogą wystąpić u maksymalnie 1
-            na 1 000 osób
+
+            RZADKIE DZIAŁANIA NIEPOŻĄDANE: mogą wystąpić u maksymalnie 1 na 1 000 osób
             • przemijające jednostronne porażenie nerwu twarzowego.
-            Częstość nieznana (częstość nie może być określona na podstawie
-            dostępnych danych)
+
+            CZĘSTOŚĆ NIEZNANA (częstość nie może być określona na podstawie dostępnych danych)
             • ciężka reakcja alergiczna.
-            Zgłaszanie działań niepożądanych
-            Jeśli wystąpią jakiekolwiek objawy niepożądane, w tym wszelkie
-            objawy niepożądane niewymienione w tej ulotce, należy powiedzieć
-            o tym lekarzowi, farmaceucie lub pielęgniarce. Działania
-            niepożądane można zgłaszać bezpośrednio do Departamentu
-            Monitorowania Niepożądanych Działań Produktów Leczniczych
-            Urzędu Rejestracji Produktów Leczniczych, Wyrobów Medycznych i
-            Produktów Biobójczych
+
+            ZGŁASZANIE DZIAŁAŃ NIEPOŻĄDANYCH
+            Jeśli wystąpią jakiekolwiek objawy niepożądane, w tym wszelkie objawy niepożądane niewymienione w tej ulotce, należy powiedzieć o tym lekarzowi, farmaceucie lub pielęgniarce. Działania niepożądane można zgłaszać bezpośrednio do Departamentu Monitorowania Niepożądanych Działań Produktów Leczniczych Urzędu Rejestracji Produktów Leczniczych, Wyrobów Medycznych i Produktów Biobójczych
             Al. Jerozolimskie 181C
             PL-02 222 Warszawa
             Tel.: + 48 22 49 21 301
             Faks: + 48 22 49 21 309
             Strona internetowa: https://smz.ezdrowie.gov.pl
             oraz podać numer serii/Lot, jeśli jest dostępny.
-            Dzięki zgłaszaniu działań niepożądanych można będzie zgromadzić
-            więcej informacji na temat bezpieczeństwa stosowania leku.'),
+            Dzięki zgłaszaniu działań niepożądanych można będzie zgromadzić więcej informacji na temat bezpieczeństwa stosowania leku.'),
 
-            ('AstraZEneca',
-            'Kiedy nie podawać szczepionki:
-            - Jeśli pacjent ma uczulenie na substancję czynną lub którykolwiek z pozostałych składników
-            tej szczepionki (wymienionych w punkcie 6).
-            Ostrzeżenia i środki ostrożności
-            Przed przyjęciem szczepionki COVID-19 Vaccine AstraZeneca należy omówić to z lekarzem,
-            farmaceutą lub pielęgniarką:
-            - Jeśli u pacjenta kiedykolwiek wystąpiła ciężka reakcja alergiczna po podaniu jakiejkolwiek
-            innej szczepionki lub po podaniu szczepionki COVID-19 Vaccine AstraZeneca w przeszłości;
-            - Jeśli pacjent kiedykolwiek zemdlał po wkłuciu igły;
-            - Jeśli obecnie pacjent przechodzi ciężkie zakażenie, któremu towarzyszy wysoka temperatura
-            (powyżej 38°C). Pacjent może jednak przyjąć szczepionkę, jeśli występuje u niego niewielka
-            gorączka lub zakażenie górnych dróg oddechowych, takie jak przeziębienie;2
-            - Jeśli u pacjenta występuje problem z krzepnięciem krwi lub powstawaniem siniaków lub jeśli
-            pacjent przyjmuje leki rozrzedzające krew (w celu zapobiegania zakrzepom krwi);
-            - Jeśli układ odpornościowy pacjenta nie działa prawidłowo (niedobór odporności) lub jeśli
-            pacjent przyjmuje leki osłabiające układ odpornościowy (takie jak kortykosteroidy w dużych
-            dawkach, leki immunosupresyjne lub leki przeciwnowotworowe).
-            W przypadku braku pewności, czy któryś z powyższych punktów dotyczy pacjenta, należy powiedzieć
-            o tym lekarzowi, farmaceucie lub pielęgniarce przed przyjęciem szczepionki.
-            Tak, jak w przypadku każdej innej szczepionki, cykl 2 dawek szczepionki COVID-19 Vaccine
-            AstraZeneca może nie zapewniać pełnej ochrony wszystkim osobom, które ją otrzymały. Nie
-            wiadomo, jak długo ochrona ta będzie się utrzymywać. Obecnie istnieją ograniczone dane dotyczące
-            skuteczności szczepionki COVID-19 Vaccine AstraZeneca u osób w wieku 55 lat i starszych.
-            Dzieci i młodzież
-            Szczepionka COVID-19 Vaccine AstraZeneca nie jest zalecana do stosowania u dzieci w wieku
-            poniżej 18 lat. Obecnie nie ma wystarczających danych dotyczących stosowania szczepionki COVID19 Vaccine AstraZeneca u dzieci i młodzieży w wieku poniżej 18 lat.
-            Szczepionka COVID-19 Vaccine AstraZeneca a inne leki
-            Należy powiedzieć lekarzowi, farmaceucie lub pielęgniarce o wszystkich lekach stosowanych przez
-            pacjenta obecnie lub ostatnio, a także o lekach, które pacjent planuje stosować oraz o jakichkolwiek
-            niedawno otrzymanych lub zaplanowanych szczepieniach.
-            Ciąża i karmienie piersią
-            Jeśli pacjentka jest w ciąży lub karmi piersią, przypuszcza że może być w ciąży lub gdy planuje mieć
-            dziecko, powinien poradzić się lekarza, farmaceuty lub pielęgniarki przed przyjęciem tej szczepionki.
-            Prowadzenie pojazdów i obsługiwanie maszyn
-            Niektóre z działań niepożądanych szczepionki COVID-19 Vaccine AstraZeneca wymienione w
-            punkcie 4 (Możliwe działania niepożądane) mogą tymczasowo wpływać na zdolność prowadzenia
-            pojazdów lub obsługiwania maszyn. W przypadku złego samopoczucia po szczepieniu nie należy
-            prowadzić pojazdów ani obsługiwać maszyn. Należy poczekać aż działania te ustąpią przed
-            przystąpieniem do prowadzenia pojazdów lub obsługiwania maszyn.
-            Szczepionka COVID-19 Vaccine AstraZeneca zawiera sód i alkohol (etanol)
-            Ta szczepionka zawiera mniej niż 1mmol sodu (23mg) na dawkę 0,5 ml, to znaczy lek uznaje się za
-            „wolny od sodu”.
-            Ta szczepionka zawiera 2 mg alkoholu (etanolu) na dawkę 0,5 ml. Niewielka ilość alkoholu w tym
-            leku nie spowoduje żadnych zauważalnych skutków.',
-            'Szczepionkę COVID-19 Vaccine AstraZeneca podaje się jako wstrzyknięcie 0,5 ml do mięśnia
-            (najczęściej górnej części ramienia).
-            W trakcie i po każdym wstrzyknięciu szczepionki lekarz, farmaceuta lub pielęgniarka będą
-            obserwować pacjenta przez około 15 minut, w celu monitorowania objawów reakcji alergicznej.
-            Pacjent otrzyma 2 wstrzyknięcia szczepionki COVID-19 Vaccine AstraZeneca. Drugie
-            wstrzyknięcie można podać w okresie od 4 do 12 tygodni po pierwszym wstrzyknięciu. Pacjent
-            zostanie poinformowany, kiedy musi przyjść ponownie w celu otrzymania drugiej dawki szczepionki.
-            Po podaniu jako pierwszej dawki szczepionki COVID-19 Vaccine AstraZeneca, pacjent powinien
-            otrzymać jako drugą dawkę także szczepionkę COVID-19 Vaccine AstraZeneca, aby ukończyć cykl
-            szczepienia.
-            Pominięcie wizyty w celu przyjęcia drugiej dawki szczepionki COVID-19 Vaccine AstraZeneca
-            W przypadku pominięcia wyznaczonej wizyty w celu przyjęcia drugiej dawki należy skonsultować się
-            z lekarzem, farmaceutą lub pielęgniarką. Ważne jest, aby pacjent powrócił po drugą dawkę
-            szczepionki COVID-19 Vaccine AstraZeneca. W przypadku pominięcia zaplanowanej drugiej dawki,
-            pacjent może nie być w pełni chroniony przed COVID-19.',
-            'Jak każdy lek, ta szczepionka może powodować działania niepożądane, chociaż nie u każdego one
-            wystąpią. W przypadku zaobserwowania jakichkolwiek działań niepożądanych niewymienionych w tej
-            ulotce, należy poinformować o nich lekarza, farmaceutę lub pielęgniarkę.
-            W przypadku wystąpienia objawów ciężkiej reakcji alergicznej pacjent powinien natychmiast
-            uzyskać pomoc medyczną. Takie reakcje mogą obejmować połączenie którychkolwiek z niżej
-            wymienionych objawów:
-            - uczucie omdlenia lub oszołomienia
-            - zaburzenia rytmu serca
-            - duszność
-            - świszczący oddech
-            - obrzęk ust, twarzy lub gardła
-            - pokrzywka lub wysypka
-            - nudności lub wymioty
-            - ból brzucha.
-            Możliwe działania niepożądane, które mogą wystąpić po podaniu szczepionki COVID-19 Vaccine
-            AstraZeneca:
-            Bardzo często (mogą wystąpić u więcej niż 1 na 10 osób)
-            - tkliwość, ból, ciepło, swędzenie lub siniaki w miejscu wstrzyknięcia
-            - uczucie zmęczenia (znużenia) lub ogólne złe samopoczucie
-            - dreszcze lub uczucie gorączki
-            - ból głowy
-            - mdłości (nudności)
-            - ból stawów lub ból mięśni
-            Często (mogą wystąpić u maksymalnie 1 na 10 osób)
-            - obrzęk lub zaczerwienienie w miejscu wstrzyknięcia
-            - gorączka (>38°C)
-            - wymioty lub biegunka4
-            Niezbyt często (mogą wystąpić u maksymalnie 1 na 100 osób)
-            - senność lub zawroty głowy
-            - zmniejszony apetyt
-            - powiększone węzły chłonne
-            - nadmierne pocenie się, swędzenie skóry lub wysypka
-            Zgłaszanie działań niepożądanych
-            Jeśli wystąpią jakiekolwiek objawy niepożądane, w tym wszelkie objawy niepożądane
-            niewymienione w tej ulotce należy powiedzieć o tym lekarzowi, farmaceucie lub pielęgniarce.
+            ('AstraZeneca',
+            '
+            KIEDY NIE PODAWAĆ SZCZEPIONKI:
+            • jeśli pacjent ma uczulenie na substancję czynną lub którykolwiek z pozostałych składników tej szczepionki.
+
+            OSTRZEŻENIA I ŚRODKI OSTROŻNOŚCI
+            Przed przyjęciem szczepionki COVID-19 Vaccine AstraZeneca należy omówić to z lekarzem, farmaceutą lub pielęgniarką:
+            • jeśli u pacjenta kiedykolwiek wystąpiła ciężka reakcja alergiczna po podaniu jakiejkolwiek innej szczepionki lub po podaniu szczepionki COVID-19 Vaccine AstraZeneca w przeszłości
+            • jeśli pacjent kiedykolwiek zemdlał po wkłuciu igły
+            • jeśli obecnie pacjent przechodzi ciężkie zakażenie, któremu towarzyszy wysoka temperatura (powyżej 38°C). Pacjent może jednak przyjąć szczepionkę, jeśli występuje u niego niewielka gorączka lub zakażenie górnych dróg oddechowych, takie jak przeziębienie
+            • jeśli u pacjenta występuje problem z krzepnięciem krwi lub powstawaniem siniaków lub jeśli pacjent przyjmuje leki rozrzedzające krew (w celu zapobiegania zakrzepom krwi)
+            • jeśli układ odpornościowy pacjenta nie działa prawidłowo (niedobór odporności) lub jeśli pacjent przyjmuje leki osłabiające układ odpornościowy (takie jak kortykosteroidy w dużych dawkach, leki immunosupresyjne lub leki przeciwnowotworowe).
+
+            W przypadku braku pewności, czy któryś z powyższych punktów dotyczy pacjenta, należy powiedzieć o tym lekarzowi, farmaceucie lub pielęgniarce przed przyjęciem szczepionki.
+
+            Tak, jak w przypadku każdej innej szczepionki, cykl 2 dawek szczepionki COVID-19 Vaccine AstraZeneca może nie zapewniać pełnej ochrony wszystkim osobom, które ją otrzymały. Nie wiadomo, jak długo ochrona ta będzie się utrzymywać. Obecnie istnieją ograniczone dane dotyczące skuteczności szczepionki COVID-19 Vaccine AstraZeneca u osób w wieku 55 lat i starszych.
+
+            DZIECI I MŁODZIEŻ
+            Szczepionka COVID-19 Vaccine AstraZeneca nie jest zalecana do stosowania u dzieci w wieku poniżej 18 lat. Obecnie nie ma wystarczających danych dotyczących stosowania szczepionki COVID19 Vaccine AstraZeneca u dzieci i młodzieży w wieku poniżej 18 lat.
+
+            SZCZEPIONKA COVID-19 VACCINE ASTRAZENECA A INNE LEKI
+            Należy powiedzieć lekarzowi, farmaceucie lub pielęgniarce o wszystkich lekach stosowanych przez pacjenta obecnie lub ostatnio, a także o lekach, które pacjent planuje stosować oraz o jakichkolwiek niedawno otrzymanych lub zaplanowanych szczepieniach.
+
+            CIĄŻA I KARMIENIE PIERSIĄ
+            Jeśli pacjentka jest w ciąży lub karmi piersią, przypuszcza że może być w ciąży lub gdy planuje mieć dziecko, powinien poradzić się lekarza, farmaceuty lub pielęgniarki przed przyjęciem tej szczepionki.
+
+            PROWADZENIE POJAZDÓW I OBSŁUGIWANIE MASZYN
+            Niektóre z działań niepożądanych szczepionki COVID-19 Vaccine AstraZeneca mogą tymczasowo wpływać na zdolność prowadzenia pojazdów lub obsługiwania maszyn. W przypadku złego samopoczucia po szczepieniu nie należy prowadzić pojazdów ani obsługiwać maszyn. Należy poczekać aż działania te ustąpią przed przystąpieniem do prowadzenia pojazdów lub obsługiwania maszyn.
+
+            SZCZEPIONKA COVID-19 VACCINE ASTRAZENECA ZAWIERA SÓD I ALKOHOL (ETANOL)
+            Ta szczepionka zawiera mniej niż 1mmol sodu (23mg) na dawkę 0,5 ml, to znaczy lek uznaje się za „wolny od sodu”.
+            Ta szczepionka zawiera 2 mg alkoholu (etanolu) na dawkę 0,5 ml. Niewielka ilość alkoholu w tym leku nie spowoduje żadnych zauważalnych skutków.',
+            '
+            Szczepionkę COVID-19 Vaccine AstraZeneca podaje się jako wstrzyknięcie 0,5 ml do mięśnia (najczęściej górnej części ramienia).
+
+            W trakcie i po każdym wstrzyknięciu szczepionki lekarz, farmaceuta lub pielęgniarka będą obserwować pacjenta przez około 15 minut, w celu monitorowania objawów reakcji alergicznej.
+
+            Pacjent otrzyma 2 wstrzyknięcia szczepionki COVID-19 Vaccine AstraZeneca. Drugie wstrzyknięcie można podać w okresie od 4 do 12 tygodni po pierwszym wstrzyknięciu. Pacjent zostanie poinformowany, kiedy musi przyjść ponownie w celu otrzymania drugiej dawki szczepionki.
+
+            Po podaniu jako pierwszej dawki szczepionki COVID-19 Vaccine AstraZeneca, pacjent powinien otrzymać jako drugą dawkę także szczepionkę COVID-19 Vaccine AstraZeneca, aby ukończyć cykl szczepienia.
+
+            POMINIĘCIE WIZYTY W CELU PRZYJĘCIA DRUGIEJ DAWKI SZCZEPIONKI COVID-19 VACCINE ASTRAZENECA
+            W przypadku pominięcia wyznaczonej wizyty w celu przyjęcia drugiej dawki należy skonsultować się z lekarzem, farmaceutą lub pielęgniarką. Ważne jest, aby pacjent powrócił po drugą dawkę szczepionki COVID-19 Vaccine AstraZeneca. W przypadku pominięcia zaplanowanej drugiej dawki, pacjent może nie być w pełni chroniony przed COVID-19.',
+            '
+            Jak każdy lek, ta szczepionka może powodować działania niepożądane, chociaż nie u każdego one wystąpią. W przypadku zaobserwowania jakichkolwiek działań niepożądanych niewymienionych w tej ulotce, należy poinformować o nich lekarza, farmaceutę lub pielęgniarkę.
+
+            W przypadku wystąpienia objawów ciężkiej reakcji alergicznej pacjent powinien natychmiast uzyskać pomoc medyczną. Takie reakcje mogą obejmować połączenie którychkolwiek z niżej wymienionych objawów:
+            • uczucie omdlenia lub oszołomienia
+            • zaburzenia rytmu serca
+            • duszność
+            • świszczący oddech
+            • obrzęk ust, twarzy lub gardła
+            • pokrzywka lub wysypka
+            • nudności lub wymioty
+            • ból brzucha.
+
+            Możliwe działania niepożądane, które mogą wystąpić po podaniu szczepionki COVID-19 Vaccine AstraZeneca:
+
+            BARDZO CZESTO (mogą wystąpić u więcej niż 1 na 10 osób)
+            • tkliwość, ból, ciepło, swędzenie lub siniaki w miejscu wstrzyknięcia
+            • uczucie zmęczenia (znużenia) lub ogólne złe samopoczucie
+            • dreszcze lub uczucie gorączki
+            • ból głowy
+            • mdłości (nudności)
+            • ból stawów lub ból mięśni
+
+            CZĘSTO (mogą wystąpić u maksymalnie 1 na 10 osób)
+            • obrzęk lub zaczerwienienie w miejscu wstrzyknięcia
+            • gorączka (>38°C)
+            • wymioty lub biegunka4
+
+            NIEZBYT CZĘSTO (mogą wystąpić u maksymalnie 1 na 100 osób)
+            • senność lub zawroty głowy
+            • zmniejszony apetyt
+            • powiększone węzły chłonne
+            • nadmierne pocenie się, swędzenie skóry lub wysypka
+
+            ZGŁASZANIE DZIAŁAŃ NIEPOŻĄDANYCH
+            Jeśli wystąpią jakiekolwiek objawy niepożądane, w tym wszelkie objawy niepożądane niewymienione w tej ulotce należy powiedzieć o tym lekarzowi, farmaceucie lub pielęgniarce.
             Działania niepożądane można zgłaszać bezpośrednio do:
             Polska
-            Departament Monitorowania Niepożądanych Działań Produktów Leczniczych Urzędu Rejestracji
-            Produktów Leczniczych, Wyrobów Medycznych i Produktów Biobójczych
+            Departament Monitorowania Niepożądanych Działań Produktów Leczniczych Urzędu Rejestracji Produktów Leczniczych, Wyrobów Medycznych i Produktów Biobójczych
             Al. Jerozolimskie 181C
             PL-02 222 Warszawa
             Tel.: + 48 22 49 21 301
