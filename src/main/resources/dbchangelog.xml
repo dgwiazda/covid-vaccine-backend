@@ -4,9 +4,9 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="create" author="1616192642_create_sequence_table_vaccine_type_id_generator">
+    <changeSet id="1616192642_create_sequence_table_vaccine_type_id_generator" author="dgwiazda">
         <sql>
-            create sequence vaccineTypeIdGenSeq
+            create sequence vaccine_type_id_seq
             maxvalue 1000
             cycle;
         </sql>
@@ -16,7 +16,7 @@
         <sql>
             create table t_vaccine_type
             (
-                id bigint default nextval('vaccineTypeIdGenSeq') not null,
+                id bigint default nextval('vaccine_type_id_seq') not null,
                 name varchar(33) not null,
                 information_before_take text not null,
                 way_of_giving text not null,
@@ -277,6 +277,127 @@
             Dzięki zgłaszaniu działań niepożądanych można będzie zgromadzić więcej informacji na temat
             bezpieczeństwa stosowania leku.'
             );
+        </sql>
+    </changeSet>
+
+    <changeSet id="1616192642_create_sequence_table_infections_id_generator" author="dgwiazda">
+        <sql>
+            create sequence infections_id_seq
+            cycle;
+        </sql>
+    </changeSet>
+
+    <changeSet id="1617300785_create_table_infections" author="dgwiazda">
+        <sql>
+            create table t_infections
+            (
+                id bigint default nextval('infections_id_seq') not null,
+                province varchar(100) not null,
+                infection_cases bigint not null,
+                deaths bigint not null,
+                date date not null
+            );
+
+            create unique index t_infections_id_uindex
+            on t_infections (id);
+
+            alter table t_infections
+            add constraint t_infections_pk
+            primary key (id);
+        </sql>
+    </changeSet>
+
+    <changeSet id="1617656178_create_sequence_table_vaccine_points_id_generator" author="dgwiazda">
+        <sql>
+            create sequence vaccine_points_id_seq
+            cycle;
+        </sql>
+    </changeSet>
+
+    <changeSet id="1617300785_create_table_vaccine_points" author="dgwiazda">
+        <sql>
+            create table t_vaccine_points
+            (
+                id bigint default nextval('vaccine_points_id_seq') not null,
+                name varchar(255) not null,
+                town varchar(100) not null,
+                street varchar(255) not null,
+                nfz_department varchar(255) not null,
+                addition_date date not null
+            );
+
+            create unique index t_vaccine_points_id_uindex
+            on t_vaccine_points (id);
+
+            alter table t_vaccine_points
+            add constraint t_vaccine_points_pk
+            primary key (id);
+        </sql>
+    </changeSet>
+
+    <changeSet id="1617656178_create_sequence_table_vaccines_id_generator" author="dgwiazda">
+        <sql>
+            create sequence vaccines_id_seq
+            cycle;
+        </sql>
+    </changeSet>
+
+    <changeSet id="1617656178_create_table_vaccines" author="dgwiazda">
+        <sql>
+            create table t_vaccines
+            (
+                id bigint default nextval('vaccines_id_seq') not null,
+                province varchar(100) not null,
+                vaccines_count bigint not null,
+                date date not null
+            );
+
+            create unique index t_vaccines_id_uindex
+            on t_vaccines (id);
+
+            alter table t_vaccines
+            add constraint t_vaccines_pk
+            primary key (id);
+        </sql>
+    </changeSet>
+
+    <changeSet id="1617718627_create_sequence_table_nop_id_generator" author="dgwiazda">
+        <sql>
+            create sequence nop_id_seq
+            cycle;
+        </sql>
+    </changeSet>
+
+    <changeSet id="1617718627_create_table_nop" author="dgwiazda">
+        <sql>
+            create table t_nop
+            (
+                id bigint default nextval('nop_id_seq') not null,
+                sex varchar(1) not null,
+                nop_description text not null,
+                date date not null
+            );
+
+            create unique index t_nop_id_uindex
+            on t_nop (id);
+
+            alter table t_nop
+            add constraint t_nop_pk
+            primary key (id);
+        </sql>
+    </changeSet>
+
+    <changeSet id="1619043362_add_province_to_nop" author="dgwiazda">
+        <sql>
+            alter table t_nop
+            add province varchar(100);
+        </sql>
+    </changeSet>
+
+    <changeSet id="1619043400_alter_top_set_column_province_not_null" author="dgwiazda">
+        <sql>
+            alter table t_nop
+            alter column province set not null;
         </sql>
     </changeSet>
 
