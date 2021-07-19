@@ -14,7 +14,7 @@ public class InsightsMatrix {
     private int rowsCount = -1;
     private int columnsCount = -1;
     private double[][] data = null;
-    private boolean isValid;
+    private boolean valid;
 
     // Secondary
     private boolean cholZero = false;
@@ -35,7 +35,7 @@ public class InsightsMatrix {
      *                     if FALSE, re-use the given memory space and overwrites on it
      */
     public InsightsMatrix(double[][] data, boolean makeDeepCopy) {
-        if (isValid = isValid2D(data)) {
+        if (valid = isValid2D(data)) {
             rowsCount = data.length;
             columnsCount = data[0].length;
             if (!makeDeepCopy) {
@@ -103,7 +103,7 @@ public class InsightsMatrix {
      * @return a InsightVector of dimension (n x 1)
      */
     public InsightsVector timesVector(InsightsVector v) {
-        if (!isValid || !v.isValid || columnsCount != v.vectorSize) {
+        if (!valid || !v.isValid() || columnsCount != v.getVectorSize()) {
             throw new RuntimeException("[InsightsMatrix][timesVector] size mismatch");
         }
         double[] data = new double[rowsCount];
@@ -195,7 +195,7 @@ public class InsightsMatrix {
      * @return solution vector of SPD
      */
     public InsightsVector solveSPDIntoVector(InsightsVector vector, final double maxConditionNumber) {
-        if (!isValid || Objects.isNull(vector) || columnsCount != vector.vectorSize) {
+        if (!valid || Objects.isNull(vector) || columnsCount != vector.getVectorSize()) {
             // invalid linear system
             throw new RuntimeException("[InsightsMatrix][solveSPDIntoVector] invalid linear system");
         }
@@ -213,7 +213,7 @@ public class InsightsMatrix {
         int i;
         int j;
         for (i = 0; i < rowsCount; ++i) {
-            bt[i] = vector.data[i];
+            bt[i] = vector.getData()[i];
         }
         double val;
         for (i = 0; i < rowsCount; ++i) {
@@ -239,7 +239,7 @@ public class InsightsMatrix {
      * @return matrix of size (m x m)
      */
     public InsightsMatrix computeAAT() {
-        if (!isValid) {
+        if (!valid) {
             throw new RuntimeException("[InsightsMatrix][computeAAT] invalid matrix");
         }
         final double[][] data = new double[rowsCount][rowsCount];
