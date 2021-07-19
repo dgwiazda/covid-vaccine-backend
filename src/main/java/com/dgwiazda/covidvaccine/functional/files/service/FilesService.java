@@ -1,23 +1,24 @@
-package com.dgwiazda.covidvaccine.files.service;
+package com.dgwiazda.covidvaccine.functional.files.service;
 
-import com.dgwiazda.covidvaccine.files.enums.ProvinceEnum;
-import com.dgwiazda.covidvaccine.persistance.model.InfectionsEntity;
-import com.dgwiazda.covidvaccine.persistance.model.NopEntity;
-import com.dgwiazda.covidvaccine.vaccinePoints.persistance.model.VaccinePointsEntity;
-import com.dgwiazda.covidvaccine.persistance.model.VaccinesEntity;
-import com.dgwiazda.covidvaccine.persistance.repository.InfectionsRepository;
-import com.dgwiazda.covidvaccine.persistance.repository.NopRepository;
+import com.dgwiazda.covidvaccine.functional.files.enums.ProvinceEnum;
+import com.dgwiazda.covidvaccine.functional.webScrapping.service.WebScraping;
+import com.dgwiazda.covidvaccine.statistics.infections.persistance.model.InfectionsEntity;
+import com.dgwiazda.covidvaccine.statistics.nop.persistance.model.NopEntity;
+import com.dgwiazda.covidvaccine.statistics.vaccines.persistance.model.VaccinesEntity;
+import com.dgwiazda.covidvaccine.statistics.infections.persistance.dao.InfectionsRepository;
+import com.dgwiazda.covidvaccine.statistics.nop.persistance.dao.NopRepository;
+import com.dgwiazda.covidvaccine.statistics.vaccines.persistance.dao.VaccinesRepository;
+import com.dgwiazda.covidvaccine.functional.files.reader.BasicCsvReader;
+import com.dgwiazda.covidvaccine.functional.files.reader.BasicDocxReader;
+import com.dgwiazda.covidvaccine.functional.files.reader.BasicXlsxReader;
 import com.dgwiazda.covidvaccine.vaccinePoints.persistance.dao.VaccinePointsRepository;
-import com.dgwiazda.covidvaccine.persistance.repository.VaccinesRepository;
-import com.dgwiazda.covidvaccine.webScraping.service.WebScraping;
-import com.dgwiazda.covidvaccine.services.functional.BasicCsvReader;
-import com.dgwiazda.covidvaccine.services.functional.BasicDocxReader;
-import com.dgwiazda.covidvaccine.services.functional.BasicXlsxReader;
+import com.dgwiazda.covidvaccine.vaccinePoints.persistance.model.VaccinePointsEntity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.apache.poi.util.IOUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.xwpf.usermodel.*;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class FilesService {
 
     private final InfectionsRepository infectionsRepository;
@@ -40,6 +42,8 @@ public class FilesService {
     @Setter
     @Getter
     private LocalDateTime updateDateTime = LocalDateTime.now();
+
+    private final Logger logger = LoggerFactory.getLogger(FilesService.class);
 
     public void saveAll() {
         saveVaccinePoints();
@@ -71,8 +75,7 @@ public class FilesService {
                     WebScraping.VACCINE_POINTS_FILE_TYPE
             );
         } catch (Exception e) {
-            LoggerFactory.getLogger(IOUtils.class)
-                    .error("Exception occurred while getting vaccine points data from website or updating file.", e);
+            logger.error("Exception occurred while getting vaccine points data from website or updating file.", e);
         }
     }
 
@@ -92,8 +95,7 @@ public class FilesService {
                         webScraping.getNopFileType());
             }
         } catch (Exception e) {
-            LoggerFactory.getLogger(IOUtils.class)
-                    .error("Exception occurred while getting nop data from website or updating file.", e);
+            logger.error("Exception occurred while getting nop data from website or updating file.", e);
         }
     }
 
@@ -105,8 +107,7 @@ public class FilesService {
                     WebScraping.VACCINES_FILE_TYPE
             );
         } catch (Exception e) {
-            LoggerFactory.getLogger(IOUtils.class)
-                    .error("Exception occurred while getting vaccines data from website or updating file.", e);
+            logger.error("Exception occurred while getting vaccines data from website or updating file.", e);
         }
     }
 
@@ -118,14 +119,13 @@ public class FilesService {
                     WebScraping.INFECTIONS_FILE_TYPE
             );
         } catch (Exception e) {
-            LoggerFactory.getLogger(IOUtils.class)
-                    .error("Exception occurred while getting infections data from website or updating file.", e);
+            logger.error("Exception occurred while getting infections data from website or updating file.", e);
         }
     }
 
     private void updateTableInfections() {
         BasicCsvReader basicCsvReader = new BasicCsvReader();
-        List<String[]> csvFile = basicCsvReader.readCsv(basicCsvReader.getInfectionsFileName());
+        List<String[]> csvFile = basicCsvReader.readCsv(BasicCsvReader.INFECTIONS_FILE_NAME);
         for (String[] csvRows : csvFile) { // for any row in file table
             int currentCell = 0; // value created to read column number
             InfectionsEntity infectionsEntity = new InfectionsEntity();
@@ -154,7 +154,7 @@ public class FilesService {
 
     private void updateTableVaccines() {
         BasicCsvReader basicCsvReader = new BasicCsvReader();
-        List<String[]> csvFile = basicCsvReader.readCsv(basicCsvReader.getVaccinesFileName());
+        List<String[]> csvFile = basicCsvReader.readCsv(BasicCsvReader.VACCINES_FILE_NAME);
         for (String[] csvRows : csvFile) { // for any rows in file table
             int currentCell = 0; // value created to read column number
             boolean skip = false;
@@ -233,7 +233,7 @@ public class FilesService {
         BasicDocxReader documentReader = new BasicDocxReader();
         XWPFDocument document = documentReader.readDocx();
         List<IBodyElement> bodyElements = document.getBodyElements();
-        long insertedRows = nopRepository.getRowsCount(); // check how much rows already inserted
+        long insertedRows = nopRepository.count(); // check how much rows already inserted
         long currentRow = 0;
         for (IBodyElement bodyElement : bodyElements) {
             if (bodyElement instanceof XWPFTable) { // look for table in file
@@ -241,7 +241,6 @@ public class FilesService {
                 List<XWPFTableRow> rows = table.getRows();
                 for (XWPFTableRow row : rows) { // for any row in table
                     List<XWPFTableCell> tableCells = row.getTableCells();
-                    System.out.println(currentRow);
                     NopEntity nopEntity = new NopEntity();
                     int cellNumber = 0; // 5191 nulle
                     if (currentRow == 0) { // table header
@@ -251,7 +250,6 @@ public class FilesService {
                     if (currentRow > insertedRows) { // continue only if row wasn't inserted in db yet
                         for (XWPFTableCell tableCell : tableCells) { // for any column in row
                             if (cellNumber == 1) {
-                                System.out.println(tableCell.getText());
                                 if (!tableCell.getText().isEmpty() && tableCell.getText() != null && tableCell.getText().equals("")) {
                                     ArrayList<Integer> dayMonthYear = getDate(tableCell.getText(),
                                             ".",
@@ -273,14 +271,12 @@ public class FilesService {
                                     break;
                                 }
                             } else if (cellNumber == 2) {
-                                System.out.println(tableCell.getText());
                                 if (!tableCell.getText().isEmpty() && tableCell.getText() != null && tableCell.getText().equals("")) {
                                     nopEntity.setProvince(tableCell.getText());
                                 } else {
                                     break;
                                 }
                             } else if (cellNumber == 4) {
-                                System.out.println(tableCell.getText());
                                 if (!tableCell.getText().isEmpty() && tableCell.getText() != null && tableCell.getText().equals("")) {
                                     String sex = findSexInNopTable(tableCell.getText());
                                     nopEntity.setSex(sex);
@@ -288,7 +284,6 @@ public class FilesService {
                                     break;
                                 }
                             } else if (cellNumber == 5) {
-                                System.out.println(tableCell.getText());
                                 if (!tableCell.getText().isEmpty() && tableCell.getText() != null && tableCell.getText().equals("")) {
                                     nopEntity.setNopDescription(tableCell.getText());
                                 } else {

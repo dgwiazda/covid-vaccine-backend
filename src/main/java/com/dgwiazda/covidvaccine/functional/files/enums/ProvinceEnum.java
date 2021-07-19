@@ -1,4 +1,4 @@
-package com.dgwiazda.covidvaccine.files.enums;
+package com.dgwiazda.covidvaccine.functional.files.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
