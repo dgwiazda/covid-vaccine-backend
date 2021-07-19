@@ -25,12 +25,6 @@ public final class ArimaParams {
     private final double[][] init_non_seasonal;
     private final double[][] diff_non_seasonal;
     private final double[][] integrate_non_seasonal;
-    private final int[] lagsAR = null;
-    private final double[] paramsAR = null;
-    private final int[] lagsMA = null;
-    private final double[] paramsMA = null;
-    // I part
-    private final double mean = 0.0;
 
     /**
      * Constructor for ArimaParams
