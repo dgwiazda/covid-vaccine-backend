@@ -1,22 +1,27 @@
 package com.dgwiazda.covidvaccine.functional.forecasting.matrix;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Arrays;
 import java.util.Objects;
 
+@Getter
+@Setter
 public class InsightsMatrix {
 
     // Primary
-    protected int rowsCount = -1;
-    protected int columnsCount = -1;
-    protected double[][] data = null;
-    protected boolean isValid;
+    private int rowsCount = -1;
+    private int columnsCount = -1;
+    private double[][] data = null;
+    private boolean isValid;
 
     // Secondary
-    protected boolean cholZero = false;
-    protected boolean cholPos = false;
-    protected boolean cholNeg = false;
-    protected double[] cholD = null;
-    protected double[][] cholL = null;
+    private boolean cholZero = false;
+    private boolean cholPos = false;
+    private boolean cholNeg = false;
+    private double[] cholD = null;
+    private double[][] cholL = null;
 
     //=====================================================================
     // Constructors
@@ -185,7 +190,7 @@ public class InsightsMatrix {
     /**
      * Solve SPD(Symmetric positive definite) into vector
      *
-     * @param vector                  vector
+     * @param vector             vector
      * @param maxConditionNumber maximum condition number
      * @return solution vector of SPD
      */
