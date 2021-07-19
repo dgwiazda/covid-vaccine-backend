@@ -1,48 +1,50 @@
 package com.dgwiazda.covidvaccine.functional.forecasting.struct;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public final class BackShift {
 
-    private final int _degree;  // maximum lag, e.g. AR(1) degree will be 1
-    private final boolean[] _indices;
-    private int[] _offsets = null;
-    private double[] _coeffs = null;
+    private final int degree;  // maximum lag, e.g. AR(1) degree will be 1
+    private final boolean[] indices;
+    private int[] offsets = null;
+    private double[] coeffs = null;
 
     //Constructor
     public BackShift(int degree, boolean initial) {
         if (degree < 0) {
             throw new RuntimeException("degree must be non-negative");
         }
-        this._degree = degree;
-        this._indices = new boolean[_degree + 1];
-        for (int j = 0; j <= _degree; ++j) {
-            this._indices[j] = initial;
+        this.degree = degree;
+        this.indices = new boolean[this.degree + 1];
+        for (int j = 0; j <= this.degree; ++j) {
+            this.indices[j] = initial;
         }
-        this._indices[0] = true; // zero index must be true all the time
+        this.indices[0] = true; // zero index must be true all the time
     }
 
     public BackShift(boolean[] indices, boolean copyIndices) {
-        if (indices == null) {
+        if (Objects.isNull(indices)) {
             throw new RuntimeException("null indices given");
         }
-        this._degree = indices.length - 1;
+        this.degree = indices.length - 1;
         if (copyIndices) {
-            this._indices = new boolean[_degree + 1];
-            System.arraycopy(indices, 0, _indices, 0, _degree + 1);
+            this.indices = Arrays.copyOf(indices, degree + 1);
         } else {
-            this._indices = indices;
+            this.indices = indices;
         }
     }
 
     public int getDegree() {
-        return _degree;
+        return degree;
     }
 
     public double[] getCoefficientsFlattened() {
-        if (_degree <= 0 || _offsets == null || _coeffs == null) {
+        if (degree <= 0 || Objects.isNull(offsets) || Objects.isNull(coeffs)) {
             return new double[0];
         }
         int temp = -1;
-        for (int offset : _offsets) {
+        for (int offset : offsets) {
             if (offset > temp) {
                 temp = offset;
             }
@@ -52,26 +54,26 @@ public final class BackShift {
         for (int j = 0; j < maxIdx; ++j) {
             flattened[j] = 0;
         }
-        for (int j = 0; j < _offsets.length; ++j) {
-            flattened[_offsets[j]] = _coeffs[j];
+        for (int j = 0; j < offsets.length; ++j) {
+            flattened[offsets[j]] = coeffs[j];
         }
         return flattened;
     }
 
     public void setIndex(int index, boolean enable) {
-        _indices[index] = enable;
+        indices[index] = enable;
     }
 
     public BackShift apply(BackShift another) {
-        int mergedDegree = _degree + another._degree;
+        int mergedDegree = degree + another.degree;
         boolean[] merged = new boolean[mergedDegree + 1];
         for (int j = 0; j <= mergedDegree; ++j) {
             merged[j] = false;
         }
-        for (int j = 0; j <= _degree; ++j) {
-            if (_indices[j]) {
-                for (int k = 0; k <= another._degree; ++k) {
-                    merged[j + k] = merged[j + k] || another._indices[k];
+        for (int j = 0; j <= degree; ++j) {
+            if (indices[j]) {
+                for (int k = 0; k <= another.degree; ++k) {
+                    merged[j + k] = merged[j + k] || another.indices[k];
                 }
             }
         }
@@ -79,22 +81,22 @@ public final class BackShift {
     }
 
     public void initializeParams(boolean includeZero) {
-        _indices[0] = includeZero;
-        _offsets = null;
-        _coeffs = null;
+        indices[0] = includeZero;
+        offsets = null;
+        coeffs = null;
         int nonzeroCount = 0;
-        for (int j = 0; j <= _degree; ++j) {
-            if (_indices[j]) {
+        for (int j = 0; j <= degree; ++j) {
+            if (indices[j]) {
                 ++nonzeroCount;
             }
         }
-        _offsets = new int[nonzeroCount]; // cannot be 0 as 0-th index is always true
-        _coeffs = new double[nonzeroCount];
+        offsets = new int[nonzeroCount]; // cannot be 0 as 0-th index is always true
+        coeffs = new double[nonzeroCount];
         int coeffIndex = 0;
-        for (int j = 0; j <= _degree; ++j) {
-            if (_indices[j]) {
-                _offsets[coeffIndex] = j;
-                _coeffs[coeffIndex] = 0;
+        for (int j = 0; j <= degree; ++j) {
+            if (indices[j]) {
+                offsets[coeffIndex] = j;
+                coeffs[coeffIndex] = 0;
                 ++coeffIndex;
             }
         }
@@ -102,31 +104,26 @@ public final class BackShift {
 
     // MAKE SURE to initializeParams before calling below methods
     public int numParams() {
-        return _offsets.length;
+        return offsets.length;
     }
 
     public int[] paramOffsets() {
-        return _offsets;
+        return offsets;
     }
 
     public double getParam(final int paramIndex) {
-        int offsetIndex = -1;
-        for (int j = 0; j < _offsets.length; ++j) {
-            if (_offsets[j] == paramIndex) {
-                return _coeffs[j];
+        for (int j = 0; j < offsets.length; ++j) {
+            if (offsets[j] == paramIndex) {
+                return coeffs[j];
             }
         }
         throw new RuntimeException("invalid parameter index: " + paramIndex);
     }
 
-    public double[] getAllParam() {
-        return this._coeffs;
-    }
-
     public void setParam(final int paramIndex, final double paramValue) {
         int offsetIndex = -1;
-        for (int j = 0; j < _offsets.length; ++j) {
-            if (_offsets[j] == paramIndex) {
+        for (int j = 0; j < offsets.length; ++j) {
+            if (offsets[j] == paramIndex) {
                 offsetIndex = j;
                 break;
             }
@@ -134,17 +131,13 @@ public final class BackShift {
         if (offsetIndex == -1) {
             throw new RuntimeException("invalid parameter index: " + paramIndex);
         }
-        _coeffs[offsetIndex] = paramValue;
-    }
-
-    public void copyParamsToArray(double[] dest) {
-        System.arraycopy(_coeffs, 0, dest, 0, _coeffs.length);
+        coeffs[offsetIndex] = paramValue;
     }
 
     public double getLinearCombinationFrom(double[] timeseries, int tsOffset) {
         double linearSum = 0;
-        for (int j = 0; j < _offsets.length; ++j) {
-            linearSum += timeseries[tsOffset - _offsets[j]] * _coeffs[j];
+        for (int j = 0; j < offsets.length; ++j) {
+            linearSum += timeseries[tsOffset - offsets[j]] * coeffs[j];
         }
         return linearSum;
     }
