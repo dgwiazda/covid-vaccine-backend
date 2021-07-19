@@ -1,0 +1,80 @@
+package com.dgwiazda.covidvaccine.functional.forecasting.util;
+
+import com.dgwiazda.covidvaccine.functional.forecasting.matrix.InsightsMatrix;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public final class ForecastUtil {
+
+
+    public static final double TEST_SET_PERCENTAGE = 0.15;
+    public static final double MAX_CONDITION_NUMBER = 100;
+    public static final double CONFIDENCE_CONSTANT_95_PCT = 1.959963984540054;
+
+    /**
+     * Instantiates Toeplitz matrix from given input array
+     *
+     * @param input double array as input data
+     * @return a Toeplitz InsightsMatrix
+     */
+    public static InsightsMatrix initToeplitz(double[] input) {
+        int length = input.length;
+        double[][] toeplitz = new double[length][length];
+
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (j > i) {
+                    toeplitz[i][j] = input[j - i];
+                } else if (j == i) {
+                    toeplitz[i][j] = input[0];
+                } else {
+                    toeplitz[i][j] = input[i - j];
+                }
+            }
+        }
+        return new InsightsMatrix(toeplitz, false);
+    }
+
+    /**
+     * Invert AR part of ARMA to obtain corresponding MA series
+     *
+     * @param ar AR portion of the ARMA
+     * @param ma MA portion of the ARMA
+     * @param lag_max maximum lag
+     * @return MA series
+     */
+    public static double[] ARMAtoMA(final double[] ar, final double[] ma, final int lag_max) {
+        final int p = ar.length;
+        final int q = ma.length;
+        final double[] psi = new double[lag_max];
+
+        for (int i = 0; i < lag_max; i++) {
+            double tmp = (i < q) ? ma[i] : 0.0;
+            for (int j = 0; j < Math.min(i + 1, p); j++) {
+                tmp += ar[j] * ((i - j - 1 >= 0) ? psi[i - j - 1] : 1.0);
+            }
+            psi[i] = tmp;
+        }
+        final double[] include_psi1 = new double[lag_max];
+        include_psi1[0] = 1;
+        System.arraycopy(psi, 0, include_psi1, 1, lag_max - 1);
+        return include_psi1;
+    }
+
+    /**
+     * Simple helper that returns cumulative sum of coefficients
+     *
+     * @param coeffs array of coefficients
+     * @return array of cumulative sum of the coefficients
+     */
+    public static double[] getCumulativeSumOfCoeff(final double[] coeffs) {
+        final int len = coeffs.length;
+        final double[] cumulativeSquaredCoeffSumVector = new double[len];
+        double cumulative = 0.0;
+        for (int i = 0; i < len; i++) {
+            cumulative += Math.pow(coeffs[i], 2);
+            cumulativeSquaredCoeffSumVector[i] = Math.pow(cumulative, 0.5);
+        }
+        return cumulativeSquaredCoeffSumVector;
+    }
+}
