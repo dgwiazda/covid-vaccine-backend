@@ -1,6 +1,6 @@
 package com.dgwiazda.covidvaccine;
 
-import com.dgwiazda.covidvaccine.files.service.FilesService;
+import com.dgwiazda.covidvaccine.functional.files.service.FilesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
